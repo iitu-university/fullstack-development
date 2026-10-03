@@ -10,8 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.packt.cardatabase.domain.Car;
 import com.packt.cardatabase.domain.CarRepository;
+import com.packt.cardatabase.domain.AppUser;
+import com.packt.cardatabase.domain.AppUserRepository;
 import com.packt.cardatabase.domain.Owner;
 import com.packt.cardatabase.domain.OwnerRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class CardatabaseApplication implements CommandLineRunner {
@@ -20,10 +23,15 @@ public class CardatabaseApplication implements CommandLineRunner {
 
     private final CarRepository repository;
     private final OwnerRepository ownerRepository;
+    private final AppUserRepository appUserRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository) {
+    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository,
+            AppUserRepository appUserRepository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
         this.ownerRepository = ownerRepository;
+        this.appUserRepository = appUserRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public static void main(String[] args) {
@@ -43,5 +51,8 @@ public class CardatabaseApplication implements CommandLineRunner {
         for (Car car : repository.findAll()) {
             logger.info("brand: {}, model: {}", car.getBrand(), car.getModel());
         }
+
+        appUserRepository.save(new AppUser("user", passwordEncoder.encode("user"), "USER"));
+        appUserRepository.save(new AppUser("admin", passwordEncoder.encode("admin"), "ADMIN"));
     }
 }
