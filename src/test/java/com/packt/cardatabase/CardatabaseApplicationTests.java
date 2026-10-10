@@ -8,6 +8,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -19,10 +20,14 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+import com.packt.cardatabase.web.CarController;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 class CardatabaseApplicationTests {
+
+    @Autowired
+    private CarController controller;
 
     @LocalServerPort
     private int port;
@@ -31,8 +36,10 @@ class CardatabaseApplicationTests {
     private TestRestTemplate restTemplate;
 
     @Test
+    @DisplayName("Spring context creates the car controller")
     void contextLoads() {
         assertThat(port).isPositive();
+        assertThat(controller).isNotNull();
     }
 
     @Test
