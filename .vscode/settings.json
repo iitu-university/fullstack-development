@@ -1,4 +1,13 @@
 {
+  "eslint.workingDirectories": ["./frontend"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "java.compile.nullAnalysis.mode": "automatic",
   "java.import.gradle.java.home": "/opt/homebrew/Cellar/openjdk@17/17.0.20.1/libexec/openjdk.jdk/Contents/Home",
   "java.configuration.runtimes": [
