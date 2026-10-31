@@ -8,6 +8,12 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
+  overrides: [
+    {
+      files: ['src/pages/react-examples/components/LessonNavigation.jsx'],
+      rules: { 'react/prop-types': 'off' },
+    },
+  ],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],

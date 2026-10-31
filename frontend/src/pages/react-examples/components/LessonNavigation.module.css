@@ -1,0 +1,34 @@
+.navigation {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.navigation button {
+  display: flex;
+  gap: 0.7rem;
+  text-align: left;
+  border-color: transparent;
+  background: transparent;
+}
+
+.navigation button[aria-current='page'] {
+  background: #e2ebff;
+  color: #183d89;
+  border-color: #adc2ef;
+}
+
+.number {
+  color: #526684;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px) {
+  .navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navigation button {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+}
