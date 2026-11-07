@@ -11,6 +11,13 @@ import { ContextDemo } from '../../features/user-context'
 import { ListsDemo } from '../../features/lists'
 import { EventsDemo } from '../../features/events'
 import { FormsDemo } from '../../features/forms'
+import {
+  TypesDemo,
+  FunctionsDemo,
+  TypedPropsDemo,
+  TypedStateDemo,
+  TypedForm,
+} from '../../features/typescript'
 import LessonNavigation from './components/LessonNavigation'
 import styles from './ReactExamplesPage.module.css'
 
@@ -63,11 +70,29 @@ const lessons = [
     title: 'Управляемые формы',
     component: FormsDemo,
   },
+  { id: 'typescript-types', title: 'Типы TypeScript', component: TypesDemo },
+  {
+    id: 'typescript-functions',
+    title: 'Функции TypeScript',
+    component: FunctionsDemo,
+  },
+  {
+    id: 'typescript-props',
+    title: 'Типизация props',
+    component: TypedPropsDemo,
+  },
+  {
+    id: 'typescript-state',
+    title: 'Типизация state',
+    component: TypedStateDemo,
+  },
+  { id: 'typescript-form', title: 'Форма TypeScript', component: TypedForm },
 ]
 
 function ReactExamplesPage() {
   const [activeId, setActiveId] = useState('components')
-  const currentLesson = lessons.find((lesson) => lesson.id === activeId)
+  const currentLesson =
+    lessons.find((lesson) => lesson.id === activeId) ?? lessons[0]
   const Lesson = currentLesson.component
 
   return (

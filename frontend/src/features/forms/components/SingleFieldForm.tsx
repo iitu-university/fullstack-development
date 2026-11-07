@@ -4,11 +4,11 @@ function SingleFieldForm() {
   const [text, setText] = useState('')
   const [inline, setInline] = useState(false)
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     alert(`You typed: ${text}`)
   }

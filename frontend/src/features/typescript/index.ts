@@ -1,0 +1,5 @@
+export { default as TypesDemo } from './components/TypesDemo'
+export { default as FunctionsDemo } from './components/FunctionsDemo'
+export { default as TypedPropsDemo } from './components/TypedPropsDemo'
+export { default as TypedStateDemo } from './components/TypedStateDemo'
+export { default as TypedForm } from './components/TypedForm'

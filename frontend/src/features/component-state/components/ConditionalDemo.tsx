@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 
 function Login() {
   return <p>Login</p>
@@ -9,15 +8,13 @@ function Logout() {
   return <p>Logout</p>
 }
 
-function AuthWithIf({ isLoggedin }) {
+function AuthWithIf({ isLoggedin }: { isLoggedin: boolean }) {
   if (isLoggedin) {
     return <Logout />
   }
 
   return <Login />
 }
-
-AuthWithIf.propTypes = { isLoggedin: PropTypes.bool.isRequired }
 
 function ConditionalDemo() {
   const [isLoggedin, setIsLoggedin] = useState(false)

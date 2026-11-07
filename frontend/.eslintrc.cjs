@@ -10,7 +10,9 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   overrides: [
     {
-      files: ['src/pages/react-examples/components/LessonNavigation.jsx'],
+      files: ['**/*.ts', '**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      extends: ['plugin:@typescript-eslint/recommended'],
       rules: { 'react/prop-types': 'off' },
     },
   ],

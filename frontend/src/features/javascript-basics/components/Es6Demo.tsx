@@ -1,26 +1,37 @@
 function Es6Demo() {
   class Person {
-    constructor(firstName, lastName) {
+    firstName: string
+    lastName: string
+
+    constructor(firstName: string, lastName: string) {
       this.firstName = firstName
       this.lastName = lastName
     }
   }
 
   class Employee extends Person {
-    constructor(firstName, lastName, title, salary) {
+    title: string
+    salary: number
+
+    constructor(
+      firstName: string,
+      lastName: string,
+      title: string,
+      salary: number,
+    ) {
       super(firstName, lastName)
       this.title = title
       this.salary = salary
     }
   }
 
-  const calc = (x) => x * 2
-  const calcSum = (x, y) => x + y
+  const calc = (x: number) => x * 2
+  const calcSum = (x: number, y: number) => x + y
   const sayHello = () => 'Hello'
 
   const PI = 3.14159
   let count = 10
-  let blockTotal
+  let blockTotal: number | undefined
 
   if (count > 5) {
     const total = count * 2

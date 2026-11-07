@@ -3,12 +3,12 @@ import { useState } from 'react'
 function ObjectForm() {
   const [user, setUser] = useState({ firstName: '', lastName: '', email: '' })
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
     setUser((previous) => ({ ...previous, [name]: value }))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     alert(`Hello ${user.firstName} ${user.lastName}`)
   }

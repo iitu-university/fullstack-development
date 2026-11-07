@@ -5,11 +5,11 @@
 Два независимых проекта:
 
 - `backend/` — Spring Boot 3.1.0, Java 17, Gradle, MariaDB, JPA, Spring Data REST, Spring Security и JWT. Тесты используют H2.
-- `frontend/` — React 18.2.0, JavaScript/JSX, Vite 4.3.9. Здесь доступны 12 разделов с практическими примерами главы 8.
+- `frontend/` — React 18.2.0, TypeScript 5.2.2, Vite 4.3.9. Здесь доступны примеры глав 8 и 9.
 - `.vscode/` — настройки редактора, Java 17, ESLint и Prettier.
 - `frontend/README.md` — структура frontend и команды запуска.
 
-## Запуск примеров главы 8
+## Запуск примеров
 
 Из каталога `frontend`:
 
@@ -27,8 +27,10 @@ npm run dev
 
 ```sh
 npm run lint
+npm run typecheck
 npm run build
 npm run examples:es6
+npm run examples:typescript
 ```
 
 ## Backend
@@ -47,4 +49,4 @@ npm run examples:es6
 В приложении доступны Swagger `/swagger`, вход `POST /login`, данные `/api/cars`,
 `/api/owners` и отдельный endpoint `/cars`.
 Начальные учебные пользователи: `user/user` (чтение) и `admin/admin` (чтение и изменение).
-Глава 8 не изменяет backend и не подключает React к его API.
+Примеры глав 8 и 9 работают без подключения React к backend API.

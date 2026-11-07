@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 import HeaderText from './HeaderText'
 
-function Hello(props) {
+function Hello(props: { user: string }) {
   return <p>Hello {props.user}</p>
 }
 
-Hello.propTypes = { user: PropTypes.string.isRequired }
-
-function FullName({ firstName, lastName }) {
+function FullName({
+  firstName,
+  lastName,
+}: {
+  firstName: string
+  lastName: string
+}) {
   return (
     <p>
       Hello {firstName} {lastName}
@@ -16,16 +19,9 @@ function FullName({ firstName, lastName }) {
   )
 }
 
-FullName.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-}
-
-function Expression({ count }) {
+function Expression({ count }: { count: number }) {
   return <p>2 + 2 = {count}</p>
 }
-
-Expression.propTypes = { count: PropTypes.number.isRequired }
 
 function PropsStateDemo() {
   const [name, setName] = useState('Jim')

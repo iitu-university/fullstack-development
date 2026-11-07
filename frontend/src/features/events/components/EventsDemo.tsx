@@ -3,7 +3,7 @@ function EventsDemo() {
     alert('Button pressed')
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     alert('Form submit')
   }

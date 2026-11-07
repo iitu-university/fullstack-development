@@ -5,7 +5,7 @@ function SeparateStateForm() {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     alert(`Hello ${firstName} ${lastName}`)
   }

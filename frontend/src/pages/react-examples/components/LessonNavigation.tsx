@@ -1,6 +1,12 @@
 import styles from './LessonNavigation.module.css'
 
-function LessonNavigation({ lessons, activeId, onSelect }) {
+type NavigationProps = {
+  lessons: { id: string; title: string }[]
+  activeId: string
+  onSelect: (id: string) => void
+}
+
+function LessonNavigation({ lessons, activeId, onSelect }: NavigationProps) {
   return (
     <nav className={styles.navigation}>
       {lessons.map(({ id, title }, index) => (
