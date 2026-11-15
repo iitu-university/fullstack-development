@@ -19,6 +19,17 @@ import {
   TypedForm,
 } from '../../features/typescript'
 import LessonNavigation from './components/LessonNavigation'
+import {
+  PromiseDemo,
+  WeatherDemo,
+  GithubDemo,
+  ReactQueryDemo,
+  RaceDemo,
+  MutationDemo,
+  FetchPostDemo,
+  CacheDemo,
+  CarRaceDemo,
+} from '../../features/networking/Networking'
 import styles from './ReactExamplesPage.module.css'
 
 const lessons = [
@@ -87,6 +98,19 @@ const lessons = [
     component: TypedStateDemo,
   },
   { id: 'typescript-form', title: 'Форма TypeScript', component: TypedForm },
+  { id: 'promises', title: 'Promise и async/await', component: PromiseDemo },
+  { id: 'fetch-post', title: 'Fetch: POST', component: FetchPostDemo },
+  { id: 'weather', title: 'Погода: fetch', component: WeatherDemo },
+  { id: 'github', title: 'GitHub: Axios', component: GithubDemo },
+  { id: 'race', title: 'Гонка запросов', component: RaceDemo },
+  {
+    id: 'race-cars',
+    title: 'Гонка запросов: автомобили',
+    component: CarRaceDemo,
+  },
+  { id: 'query', title: 'React Query', component: ReactQueryDemo },
+  { id: 'cache', title: 'React Query: staleTime', component: CacheDemo },
+  { id: 'mutation', title: 'React Query: изменения', component: MutationDemo },
 ]
 
 function ReactExamplesPage() {
