@@ -1,0 +1,23 @@
+{
+  "name": "routerapp",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.30.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.2.1",
+    "vite": "4.3.9",
+    "typescript": "5.2.2",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7"
+  }
+}

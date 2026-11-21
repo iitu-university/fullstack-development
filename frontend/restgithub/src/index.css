@@ -2,11 +2,14 @@ body {
   font-family: sans-serif;
   margin: 2rem;
 }
-input,
-button {
+form input,
+form button {
   font: inherit;
   padding: 0.5rem;
 }
-td {
-  padding: 0.4rem;
+
+.repository-grid {
+  width: 100%;
+  max-width: 850px;
+  height: 500px;
 }

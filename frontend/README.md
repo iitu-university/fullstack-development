@@ -10,6 +10,19 @@ React 18.2, TypeScript 5.2 и Vite 4.3.
 Для `weatherapp` укажите ключ в `weatherapp/.env.local` по примеру `.env.example`.
 Примеры автомобилей в общем меню используют `VITE_API_URL` и JWT backend.
 
+## Глава 11
+
+| Пример | Каталог | Что открыть |
+| --- | --- | --- |
+| React Date Picker | `frontend/` | Пункт **React Date Picker** в меню |
+| AG Grid | `frontend/restgithub/` | Поиск репозиториев и таблица с фильтрами, сортировкой и пагинацией |
+| MUI 5 | `frontend/shoppinglist/` | **Add Item** и форма с полями **Product** и **Amount** |
+| React Router 6 | `frontend/routerapp/` | **Home**, **Contact**, **London**, **Paris**, `/contact/mike` и `/missing` |
+
+В каталоге каждого приложения выполните `npm ci` и `npm run dev`.
+
+## Структура
+
 - `src/app/` — приложение и общие стили.
 - `src/pages/react-examples/` — страница со списком примеров и навигацией.
 - `src/features/` — компоненты примеров по темам.

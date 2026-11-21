@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+  color: #213547;
+  text-align: center;
+}
+
+#root {
+  padding: 1rem;
+}
+
+a {
+  color: #4249cb;
+}
+
+h1,
+h3 {
+  margin: 1rem 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+}

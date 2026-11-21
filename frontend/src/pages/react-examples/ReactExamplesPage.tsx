@@ -30,6 +30,7 @@ import {
   CacheDemo,
   CarRaceDemo,
 } from '../../features/networking/Networking'
+import DatePickerDemo from '../../features/date-picker/DatePickerDemo'
 import styles from './ReactExamplesPage.module.css'
 
 const lessons = [
@@ -111,6 +112,7 @@ const lessons = [
   { id: 'query', title: 'React Query', component: ReactQueryDemo },
   { id: 'cache', title: 'React Query: staleTime', component: CacheDemo },
   { id: 'mutation', title: 'React Query: изменения', component: MutationDemo },
+  { id: 'date-picker', title: 'React Date Picker', component: DatePickerDemo },
 ]
 
 function ReactExamplesPage() {

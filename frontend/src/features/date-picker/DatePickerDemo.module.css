@@ -1,0 +1,14 @@
+.picker :global(.react-date-picker__wrapper) {
+  border-radius: 6px;
+}
+
+.picker :global(.react-date-picker__inputGroup__input) {
+  box-sizing: content-box;
+  padding: 0 1px;
+  border: 0;
+  border-radius: 0;
+}
+
+.picker :global(.react-date-picker__calendar) {
+  max-width: calc(100vw - 4rem);
+}
