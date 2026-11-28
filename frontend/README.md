@@ -21,6 +21,44 @@ React 18.2, TypeScript 5.2 и Vite 4.3.
 
 В каталоге каждого приложения выполните `npm ci` и `npm run dev`.
 
+## Главы 12 и 13
+
+Перейдите в каталог `frontend/carfront` и запустите Vite.
+
+```sh
+npm ci
+npm run dev
+```
+
+По адресу из строки `Local` открывается **Car Shop**. Таблица загружает
+автомобили с `/api/cars` и поддерживает сортировку, фильтрацию и пагинацию.
+**New Car**, **Edit** и **Delete** меняют записи в базе.
+CSV доступен через **Export → Download as CSV**.
+Адрес API по умолчанию — `http://localhost:8080`. Другой адрес можно указать
+переменной `VITE_API_URL` в `frontend/carfront/.env.local`.
+
+Для проверки REST API создайте в локальной MariaDB отдельную базу.
+
+```sql
+CREATE DATABASE IF NOT EXISTS cardb_chapter12;
+```
+
+Запустите Spring Boot из каталога `backend` с Java 17.
+
+```sh
+./gradlew bootRun --args='--spring.profiles.active=chapter12'
+```
+
+В другом терминале проверьте ответ API.
+
+```sh
+curl http://127.0.0.1:8080/api/cars
+```
+
+Профиль `chapter12` открывает API без JWT на `127.0.0.1`.
+Параметры подключения MariaDB берутся из конфигурации backend, а имя базы
+для этого профиля задано в `application-chapter12.properties`.
+
 ## Структура
 
 - `src/app/` — приложение и общие стили.

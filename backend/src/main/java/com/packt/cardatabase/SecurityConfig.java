@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -36,6 +37,7 @@ public class SecurityConfig {
     }
 
     @Bean
+    @Profile("!chapter12")
     public SecurityFilterChain filterChain(HttpSecurity http, JwtService jwtService,
             UserDetailsServiceImpl userDetailsService, AuthEntryPoint entryPoint) throws Exception {
         http.csrf(csrf -> csrf.disable())
@@ -57,6 +59,15 @@ public class SecurityConfig {
                 .addFilterBefore(new AuthenticationFilter(jwtService, userDetailsService, entryPoint),
                         UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(exceptions -> exceptions.authenticationEntryPoint(entryPoint));
+        return http.build();
+    }
+
+    @Bean
+    @Profile("chapter12")
+    public SecurityFilterChain chapter12FilterChain(HttpSecurity http) throws Exception {
+        http.csrf(csrf -> csrf.disable())
+                .cors(cors -> {})
+                .authorizeHttpRequests(authorize -> authorize.anyRequest().permitAll());
         return http.build();
     }
 

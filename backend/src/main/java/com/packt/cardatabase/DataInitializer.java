@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.packt.cardatabase.domain.AppUser;
 import com.packt.cardatabase.domain.AppUserRepository;
@@ -33,20 +34,27 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     @Override
+    @Transactional
     public void run(String... args) {
-        Owner owner1 = new Owner("John", "Johnson");
-        Owner owner2 = new Owner("Mary", "Robinson");
-        ownerRepository.saveAll(Arrays.asList(owner1, owner2));
+        if (ownerRepository.count() == 0 && repository.count() == 0) {
+            Owner owner1 = new Owner("John", "Johnson");
+            Owner owner2 = new Owner("Mary", "Robinson");
+            ownerRepository.saveAll(Arrays.asList(owner1, owner2));
 
-        repository.save(new Car("Ford", "Mustang", "Red", "ADF-1121", 2023, 59000, owner1));
-        repository.save(new Car("Nissan", "Leaf", "White", "SSJ-3002", 2020, 29000, owner2));
-        repository.save(new Car("Toyota", "Prius", "Silver", "KKO-0212", 2022, 39000, owner2));
+            repository.save(new Car("Ford", "Mustang", "Red", "ADF-1121", 2023, 59000, owner1));
+            repository.save(new Car("Nissan", "Leaf", "White", "SSJ-3002", 2020, 29000, owner2));
+            repository.save(new Car("Toyota", "Prius", "Silver", "KKO-0212", 2022, 39000, owner2));
+        }
 
         for (Car car : repository.findAll()) {
             logger.info("brand: {}, model: {}", car.getBrand(), car.getModel());
         }
 
-        appUserRepository.save(new AppUser("user", passwordEncoder.encode("user"), "USER"));
-        appUserRepository.save(new AppUser("admin", passwordEncoder.encode("admin"), "ADMIN"));
+        if (appUserRepository.findByUsername("user").isEmpty()) {
+            appUserRepository.save(new AppUser("user", passwordEncoder.encode("user"), "USER"));
+        }
+        if (appUserRepository.findByUsername("admin").isEmpty()) {
+            appUserRepository.save(new AppUser("admin", passwordEncoder.encode("admin"), "ADMIN"));
+        }
     }
 }

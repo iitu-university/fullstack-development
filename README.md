@@ -5,7 +5,7 @@
 Два независимых проекта:
 
 - `backend/` — Spring Boot 3.1.0, Java 17, Gradle, MariaDB, JPA, Spring Data REST, Spring Security и JWT. Тесты используют H2.
-- `frontend/` — React 18.2.0, TypeScript 5.2.2, Vite 4.3.9 и примеры глав 8–11.
+- `frontend/` — React, TypeScript, Vite и примеры глав 8–13.
 - `.vscode/` — настройки редактора, Java 17, ESLint и Prettier.
 - `frontend/README.md` — структура frontend и команды запуска.
 
